@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Tool;
 using UnityEngine;
+using View;
 
-public class ViewManager : MonoBehaviour
+namespace Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ViewManager : MySingleton<ViewManager>
     {
-        
-    }
+        [SerializeField]private ViewBase _startView;
+        private ViewBase _currentView;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            _currentView = _startView ;
+            _currentView.Show();
+        }
+
+        public void SwitchView(ViewBase _nextView)
+        {
+            _currentView.Hide();
+            _currentView = _nextView;
+            _nextView.Show();
+        }
     }
 }

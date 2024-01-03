@@ -1,7 +1,15 @@
-﻿
-using UnityEngine;
+﻿using System;
+using Tool;
+using UnityEngine.Events;
 
-public class GameManager : MonoBehaviour
+namespace Core
 {
-    
+    public class GameManager :MySingleton<GameManager>
+    {
+
+        private void Awake()
+        {
+            
+        }
+    }
 }
