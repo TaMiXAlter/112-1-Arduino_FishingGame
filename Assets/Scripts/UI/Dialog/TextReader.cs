@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.IO;
 using Class;
-using Application = UnityEngine.Application;
+using UnityEngine;
+
 
 namespace Dialog
 {
@@ -17,21 +18,25 @@ namespace Dialog
         
         public  List<Selection> GetSortSelectionData (string _selectionPath,string _answerPath)
         {
-            List<Selection> _selection = new List<Selection>();
-            string[] SelectionState = ReadALLString(_selectionPath).Split("\n");
+            List<Selection> _selections = new List<Selection>();
+             string[] SelectionState = ReadALLString(_selectionPath).Split("\n");
             string[] AnswerState = ReadALLString(_answerPath).Split("\n");
+            
             
             for (int i = 0; i < SelectionState.Length; i++)
             {
+                Selection selection = new Selection();
                 string[] _selectionText = SelectionState[i].Split("/");
                 string[] _answerText = AnswerState[i].Split("/");
-                _selection[i].RightSelection = _selectionText[0];
-                _selection[i].WrongSelection = _selectionText[1];
-                _selection[i].RightAnswer = _answerText[0];
-                _selection[i].WrongAnswer = _answerText[1];
+                selection.RightSelection = _selectionText[0];
+                selection.WrongSelection = _selectionText[1];
+                selection.RightAnswer = _answerText[0];
+                selection.WrongAnswer = _answerText[1];
+                
+                _selections.Add(selection);
             }
-
-            return _selection;
+        
+            return _selections;
         }
     }
     public class Selection

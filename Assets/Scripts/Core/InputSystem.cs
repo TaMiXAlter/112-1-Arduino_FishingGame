@@ -36,8 +36,8 @@ namespace Core
         }
         private void Update()
         {
-            if(Input.GetKey(KeyCode.D))RButtonPress?.Invoke();
-            if(Input.GetKey(KeyCode.A))LButtonPress?.Invoke();
+            if(Input.GetKeyDown(KeyCode.D))RButtonPress?.Invoke();
+            if(Input.GetKeyDown(KeyCode.A))LButtonPress?.Invoke();
             
             var inPutStrings = _arduinoPort.Inputdata.Split(",");
             if (inPutStrings.Length == 2)
@@ -45,7 +45,7 @@ namespace Core
                 if(inPutStrings[0] == "1")RButtonPress?.Invoke();
                 if(inPutStrings[1] == "1")LButtonPress?.Invoke();
             };
-            
+            //TODO:消除彈跳
             //TODO:解決LB觸發頻率較慢問題
         }
 

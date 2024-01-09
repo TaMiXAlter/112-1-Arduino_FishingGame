@@ -1,4 +1,5 @@
-﻿using Core.SceneSystem;
+﻿using Class;
+using Core.SceneSystem;
 
 namespace Interface
 {
