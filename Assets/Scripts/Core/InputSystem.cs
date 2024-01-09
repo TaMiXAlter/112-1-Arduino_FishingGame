@@ -1,28 +1,32 @@
 ﻿using System;
 using Tool;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 
 namespace Core
 {
     public class InputSystem:StaticSingleton<InputSystem>
     {
-        public event Action RButtonPress,LButtonPress;
+        private event Action RButtonPress,LButtonPress;
         
         private ArduinoPort _arduinoPort;
-
         public void Intialize()
         {
             LButtonPress = null;
             RButtonPress = null;
+        }
+        public void BindNewAction(Action LAction,Action RAction)
+        {
+            LButtonPress = LAction;
+            RButtonPress = RAction;
         }
         
         private void Awake()
         {
             _arduinoPort = GetComponent<ArduinoPort>();
             _arduinoPort.OpenPort();
+            //for test
+            LButtonPress += () => Debug.Log("L");
+            RButtonPress += () => Debug.Log("R");
         }
 
         private void OnDisable()
@@ -44,6 +48,10 @@ namespace Core
             
             //TODO:解決LB觸發頻率較慢問題
         }
+
+        
         
     }
+
+
 }

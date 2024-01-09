@@ -1,43 +1,34 @@
-﻿using Core.Assest;
-using GamePlayStrategys;
-using InterFaces;
-using JetBrains.Annotations;
+﻿using Class;
 using Tool;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace Core
 {
-    public class GameManager :Singleton<GameManager>
+    public enum MainGameState
     {
-        private IGamePlayStrategy _curentStrategy;
-        public MainPageStrategy _mainPageStrategy = new MainPageStrategy();
-        public SelectionStrategy _selectionStrategy = new SelectionStrategy();
-        
-        public TextSorter _textSorter = new TextSorter();
-        public TextReader _textReader = new TextReader();
+        WelcomPage,
+        Su,
+        Fan,
+        Thanks
+    }
+    public class GameManager :StaticSingleton<GameManager>
+    {
+        public MainGameState CurrentState = MainGameState.WelcomPage;
         private void Awake()
         {
             foreach (var VARIABLE in FindObjectsOfType<GameManager>() )
             {
                 if (VARIABLE != this )  Destroy(gameObject);
             }
-
+            
             DontDestroyOnLoad(this);
-            _curentStrategy = _mainPageStrategy;
-            _curentStrategy.Init(this);
-        }
-        
-        private void Update()
-        {
-            _curentStrategy.Update(this);
         }
 
-        public void SwitchStrategy(IGamePlayStrategy iGamePlayStrategy)
+        public void SwitchSence(int sceneNum,MainGameState nextState)
         {
-            _curentStrategy.EndUp(this);
-            _curentStrategy = iGamePlayStrategy;
-            _curentStrategy.Init(this);
+            SceneManager.LoadScene(sceneNum);
+            CurrentState = nextState;
         }
 
       

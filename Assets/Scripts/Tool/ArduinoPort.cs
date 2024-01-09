@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
         public string Inputdata;
         
-        string portName_1 = "COM4";
+        string portName_1 = "COM5";
         int setBaudRate = 9600;
         Parity parity = Parity.None;
         int dataBits = 8;
@@ -33,7 +33,7 @@ using UnityEngine.UI;
             }catch(Exception e)
             {
                 Debug.Log(e.Message);
-                StartCoroutine(DoAgain(3));
+                StartCoroutine(OpenPortAgain(3));
             }
         }
 
@@ -51,10 +51,10 @@ using UnityEngine.UI;
         {
             if (!serialPort.IsOpen) return ;
             Inputdata = serialPort.ReadExisting();
-            Thread.Sleep(90);              // delay 0.5s to read the data
+            // delay 0.5s to read the data
         }
         
-        private IEnumerator DoAgain(float dletaTime)
+        private IEnumerator OpenPortAgain(float dletaTime)
         {
             yield return new WaitForSeconds(dletaTime);
             OpenPort();

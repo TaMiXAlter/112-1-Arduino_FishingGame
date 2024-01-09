@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f80d78b04ae4779a8709bd3112d8d42, type: 3}
+  m_Name: SuText
+  m_EditorClassIdentifier: 
+  myName: "\u5C0F\u8607"
+  WinnerText: "\u6C92\u60F3\u5230\u4F60\u5F97\u5C41\u80A1\u8072\u97F3\u9019\u9EBC\u597D\u807D\u8B93\u6211\u5275\u9020\u51FA\u6211\u90FD\u6C92\u8FA6\u6CD5\u60F3\u6A23\u7684\u97F3\u6A02\uFF0C\u4F60\u52A0\u6211\u7684line\u5427"
+  LoserText: "\u6069...\u8A66\u904E\u4E4B\u5F8C\u624D\u767C\u73FE\u8591\u9084\u662F\u8001\u7684\u8FA3\u62B1\u6B49\u4E86"
+  GetSelectionPath: /Dialog/SuSelection.txt
+  GetAnswerPath: /Dialog/SuAnswer.txt

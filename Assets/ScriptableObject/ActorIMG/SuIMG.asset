@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14798832351645348049fc4556c0f1d1, type: 3}
+  m_Name: SuIMG
+  m_EditorClassIdentifier: 
+  BG:
+  - {fileID: 21300000, guid: 4211b4621263a1a459d0635908fe724a, type: 3}
+  RightActor: {fileID: 21300000, guid: 918e5e5d7ea58a64998359be7ec17be9, type: 3}
+  WrongActor: {fileID: 21300000, guid: 4b07cdee7a750c2489fbbc2977e172ea, type: 3}
+  WinnerIMG: {fileID: 21300000, guid: 8a8118713285a474c8ee176c8e2bae7c, type: 3}
+  LoserIMG: {fileID: 21300000, guid: 4ff24c4bb773b7f4e8559ea21890c928, type: 3}
