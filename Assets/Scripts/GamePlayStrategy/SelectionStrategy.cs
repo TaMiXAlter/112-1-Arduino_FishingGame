@@ -23,6 +23,7 @@ namespace GamePlayStrategy
 
         private int PlayerSelectNum,SelectionNow,AnswerNum;
         private bool canPick;
+
         public void init(GamePlaySystem gamePlaySystem)
         {
             switch (GameManager.Instance.CurrentState)
@@ -66,6 +67,7 @@ namespace GamePlayStrategy
         void SelectionState()
         {
             _gamePlaySystem._viewManager.SetSelectorUIActive(true);
+            _gamePlaySystem._viewManager.SetFeverUIActive(false);
             PlayerSelectNum = 0;
             AnswerNum = Random.Range(1, 3);
             switch (AnswerNum)
@@ -106,9 +108,12 @@ namespace GamePlayStrategy
             {
                 SelectionNow++;
                 SelectionState();
-                return;
             }
-            _gamePlaySystem.SwitchGamePlayState(_gamePlaySystem.FeverStartegy);
+            else
+            {
+                _gamePlaySystem.SwitchGamePlayState(_gamePlaySystem.FeverStartegy);
+            }
+            
         }
 
         

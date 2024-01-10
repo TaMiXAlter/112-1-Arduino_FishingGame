@@ -28,4 +28,5 @@ public class ViewManager : MonoBehaviour
     }
 
     public void SetSelectorUIActive(bool active) => transform.Find("SelecterUI").GameObject().SetActive(active);
+    public void SetFeverUIActive(bool active) => transform.Find("FeverTimeUI").GameObject().SetActive(active);
 }

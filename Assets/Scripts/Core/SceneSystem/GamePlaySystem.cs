@@ -7,6 +7,7 @@ using GamePlayStrategy;
 using Interface;
 using UI;
 using UnityEngine;
+using UnityEngine.Windows.WebCam;
 
 namespace Core.SceneSystem
 {
@@ -15,17 +16,13 @@ namespace Core.SceneSystem
         public ActorText SuActorText, FanActorText;
         public ActorIMG SuActorImg, FanActorImg;
 
+        
         #region GetAssest
-
-        [HideInInspector]
-        public TextReader _textReader = new TextReader();
-        [HideInInspector]
-        public ViewManager _viewManager;
-        [HideInInspector]
-        public DialogManager _dialogManager;
-        [HideInInspector]
-        public SelectorManager _selectorManager;
-
+        [HideInInspector] public TextReader _textReader = new TextReader();
+        [HideInInspector] public ViewManager _viewManager;
+        [HideInInspector] public DialogManager _dialogManager;
+        [HideInInspector] public SelectorManager _selectorManager;
+        [HideInInspector] public FeverManager _Fevermanager;
         #endregion
 
         #region Strategys
@@ -52,7 +49,7 @@ namespace Core.SceneSystem
 
         private void Update()
         {
-            CurrentStrategy.update(this);
+            // CurrentStrategy.update(this);
             _viewManager.SetFavorabilityNum(Favoraty);
         }
 
@@ -61,5 +58,7 @@ namespace Core.SceneSystem
             CurrentStrategy = newStrategy;
             CurrentStrategy.init(this);
         }
+        
+        
     }
 }
