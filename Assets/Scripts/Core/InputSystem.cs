@@ -19,6 +19,12 @@ namespace Core
             LButtonPress = LAction;
             RButtonPress = RAction;
         }
+
+        public void ClearAcction()
+        {
+            LButtonPress = null;
+            RButtonPress = null;
+        }
         
         private void Awake()
         {

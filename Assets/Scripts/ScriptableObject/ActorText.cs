@@ -8,7 +8,6 @@ namespace Class
     public  class ActorText : ScriptableObject
     {
         public string myName,StartText;
-        public string WinnerText,LoserText;
         public string GetSelectionPath;
         public string GetAnswerPath;
         

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14798832351645348049fc4556c0f1d1, type: 3}
   m_Name: FanIMG
   m_EditorClassIdentifier: 
-  BG: []
-  RightActor: {fileID: 0}
-  WrongActor: {fileID: 0}
-  WinnerIMG: {fileID: 0}
-  LoserIMG: {fileID: 21300000, guid: 4ff24c4bb773b7f4e8559ea21890c928, type: 3}
+  BG:
+  - {fileID: 21300000, guid: b530afa56c51bf24089877d9ee87531c, type: 3}
+  RightActor: {fileID: 21300000, guid: 3a28253a467a3294482111adaab19023, type: 3}
+  WrongActor: {fileID: 21300000, guid: 0656f97626be8b949b893be4c345de2e, type: 3}
+  WinnerVid: {fileID: 32900000, guid: d4153d0c2f02c7740b88563c5ee18171, type: 3}
+  LoserVid: {fileID: 32900000, guid: d24e6d48c4b9b7a488845e84271a6eb0, type: 3}

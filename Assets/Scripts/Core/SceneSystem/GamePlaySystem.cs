@@ -23,12 +23,15 @@ namespace Core.SceneSystem
         [HideInInspector] public DialogManager _dialogManager;
         [HideInInspector] public SelectorManager _selectorManager;
         [HideInInspector] public FeverManager _Fevermanager;
+        [HideInInspector] public VideoManager _VideoManager;
+        [HideInInspector] public AudioManager _AudioManager;
         #endregion
 
         #region Strategys
 
         public SelectionStrategy SelectionStrategy = new SelectionStrategy();
         public FeverStartegy FeverStartegy = new FeverStartegy();
+        public EndupStrategy EndupStrategy = new EndupStrategy();
 
         #endregion
         
@@ -40,6 +43,9 @@ namespace Core.SceneSystem
             _viewManager = GameObject.Find("Canvas").GetComponent<ViewManager>();
             _dialogManager =  GameObject.Find("Canvas").GetComponent<DialogManager>();
             _selectorManager = GameObject.Find("Canvas").transform.Find("SelecterUI").GetComponent<SelectorManager>();
+            _Fevermanager = GameObject.Find("Canvas").transform.Find("FeverTimeUI").GetComponent<FeverManager>();
+            _VideoManager = GameObject.Find("Canvas").GetComponent<VideoManager>();
+            _AudioManager = GameObject.Find("Audio Source").GetComponent<AudioManager>();
         }
 
         private void Start()

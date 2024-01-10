@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f80d78b04ae4779a8709bd3112d8d42, type: 3}
+  m_Name: Fantext
+  m_EditorClassIdentifier: 
+  myName: "\u5C0F\u4E43"
+  StartText: "\u4F60\u597D!\u6211\u662F\u4F86\u81EA\u99AC\u4F86\u897F\u4E9E\u7684\u5C0F\u4E43"
+  GetSelectionPath: /Dialog/FanSelection.txt
+  GetAnswerPath: /Dialog/FanAnswer.txt

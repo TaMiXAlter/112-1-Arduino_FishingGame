@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
 
 namespace Class
 {  
@@ -7,6 +8,6 @@ namespace Class
     {
         public Sprite[] BG;
         public Sprite RightActor, WrongActor;
-        public Sprite WinnerIMG, LoserIMG;
+        public VideoClip WinnerVid, LoserVid;
     }
 }
