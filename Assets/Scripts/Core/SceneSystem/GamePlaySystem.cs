@@ -55,7 +55,6 @@ namespace Core.SceneSystem
 
         private void Update()
         {
-            // CurrentStrategy.update(this);
             _viewManager.SetFavorabilityNum(Favoraty);
         }
 

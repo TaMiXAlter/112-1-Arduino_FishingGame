@@ -19,6 +19,7 @@ namespace GamePlayStrategy
         {
             gamePlaySystem._viewManager.SetSelectorUIActive(false);
             gamePlaySystem._viewManager.SetFeverUIActive(true);
+            gamePlaySystem._AudioManager.PlayFever();
             _mono = gamePlaySystem.GetComponent<MonoBehaviour>();
            InputSystem.Instance.ClearAcction();
            _gamePlaySystem = gamePlaySystem;
@@ -27,11 +28,6 @@ namespace GamePlayStrategy
            ScaleNum = 1;
            
             _mono.StartCoroutine(CountDown(3, _mono, gamePlaySystem));
-        }
-
-        public void update(GamePlaySystem gamePlaySystem)
-        {
-            
         }
 
         IEnumerator CountDown(float Time,MonoBehaviour mono,GamePlaySystem gamePlaySystem)

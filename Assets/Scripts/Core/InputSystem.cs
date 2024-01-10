@@ -25,6 +25,16 @@ namespace Core
             LButtonPress = null;
             RButtonPress = null;
         }
+
+        public void ClosePort()
+        {
+            _arduinoPort.ClosePort();
+        }
+
+        public void OpenPort()
+        {
+            _arduinoPort.OpenPort();
+        }
         
         private void Awake()
         {
@@ -44,19 +54,13 @@ namespace Core
         {
             if(Input.GetKeyDown(KeyCode.D))RButtonPress?.Invoke();
             if(Input.GetKeyDown(KeyCode.A))LButtonPress?.Invoke();
+
+
+            if(_arduinoPort.Inputdata == "R")RButtonPress?.Invoke();
+            if(_arduinoPort.Inputdata == "L")LButtonPress?.Invoke();
             
-            var inPutStrings = _arduinoPort.Inputdata.Split(",");
-            if (inPutStrings.Length == 2)
-            {
-                if(inPutStrings[0] == "1")RButtonPress?.Invoke();
-                if(inPutStrings[1] == "1")LButtonPress?.Invoke();
-            };
-            //TODO:消除彈跳
             //TODO:解決LB觸發頻率較慢問題
         }
-
-        
-        
     }
 
 

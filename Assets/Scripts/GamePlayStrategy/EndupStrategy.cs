@@ -13,6 +13,8 @@ namespace UI
         public void init(GamePlaySystem gamePlaySystem)
         {
             gamePlaySystem._viewManager.SetFeverUIActive(false);
+            gamePlaySystem._AudioManager.Pause();
+            InputSystem.Instance.ClosePort();
             mono = gamePlaySystem.GetComponent<MonoBehaviour>();
             mono.StartCoroutine(SwitchNext(5, gamePlaySystem));
             switch (GameManager.Instance.CurrentState)
@@ -24,6 +26,8 @@ namespace UI
                     playVideoOnFavoraity(gamePlaySystem.FanActorImg.WinnerVid,gamePlaySystem.FanActorImg.LoserVid,gamePlaySystem);
                     break;
             }
+            
+            
             
         }
 
@@ -42,6 +46,7 @@ namespace UI
         IEnumerator SwitchNext(float time,GamePlaySystem gamePlaySystem)
         {
             yield return new WaitForSeconds(time);
+            InputSystem.Instance.OpenPort();
             if (GameManager.Instance.CurrentState == MainGameState.Su)
             {
                 GameManager.Instance.CurrentState = MainGameState.Fan;
@@ -51,11 +56,9 @@ namespace UI
             {
                 GameManager.Instance.SwitchSence(2,MainGameState.Thanks);
             }
+            
+            
         }
-
-        public void update(GamePlaySystem gamePlaySystem)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

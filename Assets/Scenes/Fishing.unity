@@ -386,7 +386,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 0
+  m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!4 &251271700
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e61a4e8811442f498cb645758b8c9a3, type: 2}
-  m_sharedMaterial: {fileID: -7764768219728346622, guid: d8125c3a851366c4a957ad956e402050, type: 2}
+  m_sharedMaterial: {fileID: 1951597409570655661, guid: 6e61a4e8811442f498cb645758b8c9a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_margin: {x: 100, y: 100, z: 100, w: 100}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1274025792
@@ -2449,7 +2449,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e61a4e8811442f498cb645758b8c9a3, type: 2}
-  m_sharedMaterial: {fileID: -7764768219728346622, guid: d8125c3a851366c4a957ad956e402050, type: 2}
+  m_sharedMaterial: {fileID: 1951597409570655661, guid: 6e61a4e8811442f498cb645758b8c9a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_margin: {x: 100, y: 100, z: 100, w: 100}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1888778237
@@ -2542,7 +2542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1951083840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2622,7 +2622,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951083839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7142a4a8ee903304caa89ea42a52b145, type: 2}
   m_CullingMode: 0

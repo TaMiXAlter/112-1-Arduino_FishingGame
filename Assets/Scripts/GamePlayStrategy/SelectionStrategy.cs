@@ -31,22 +31,27 @@ namespace GamePlayStrategy
                 case MainGameState.Su:
                     _actorText = gamePlaySystem.SuActorText;
                     _actorImg = gamePlaySystem.SuActorImg;
+                    gamePlaySystem._AudioManager.PlaySu();
                     break;
                 case MainGameState.Fan:
                     _actorText = gamePlaySystem.FanActorText;
                     _actorImg = gamePlaySystem.FanActorImg;
+                    gamePlaySystem._AudioManager.PlayFan();
                     break;
                 default:
                     //for testing
                     _actorText = gamePlaySystem.SuActorText;
                     _actorImg = gamePlaySystem.SuActorImg;
+                    gamePlaySystem._AudioManager.PlaySu();
                     break;
             }
 
+            
             _selections =
                 gamePlaySystem._textReader.GetSortSelectionData(_actorText.GetSelectionPath, _actorText.GetAnswerPath);
             SetupText(gamePlaySystem._dialogManager);
             SetupView(gamePlaySystem._viewManager);
+            
             gamePlaySystem.Favoraty = 0;
             PlayerSelectNum = 0;
             SelectionNow = 0;
@@ -54,16 +59,11 @@ namespace GamePlayStrategy
             _gamePlaySystem = gamePlaySystem;
             canPick = false;
             
+            
             InputSystem.Instance.BindNewAction(PickL,PickR);
             SelectionState();
         }
-
-        public void update(GamePlaySystem gamePlaySystem)
-        {
-            
-        }
-
-
+        
         void SelectionState()
         {
             _gamePlaySystem._viewManager.SetSelectorUIActive(true);
